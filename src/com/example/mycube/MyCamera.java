@@ -6,7 +6,7 @@ public class MyCamera {
 	
 	 	float eyeX = 0.0f;
 	    float eyeY = 0.0f;
-	    float eyeZ = 2.0f;
+	    float eyeZ = 7.0f;
 	 
 	    // We are looking toward the distance
 	    float centerX = 0.0f;

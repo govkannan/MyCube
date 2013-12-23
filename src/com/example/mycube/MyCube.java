@@ -45,74 +45,143 @@ public class MyCube {
 			+ "varying vec2 v_TexCoordinate;  \n"   // Interpolated texture coordinate per fragment."
 			+ "void main()                    \n"     // The entry point for our fragment shader.
 			+ "{                              \n"
-			+ "   gl_FragColor = v_color * texture2D(u_Texture, v_TexCoordinate);     \n"     // Pass the color directly through the pipeline.c
+			+ "   gl_FragColor =  texture2D(u_Texture, v_TexCoordinate);     \n"     // Pass the color directly through the pipeline.c
 //			+ "   gl_FragColor = v_color;      \n"     // Pass the color directly through the pipeline.c
 			+ "}                              \n";
+//	private float[] vertices = 
+//		{
+//
+//            -0.7f, -0.7f, -0.7f,
+//            0.0f,  1.0f,  0.0f,  1.0f,
+//            
+//            0.7f, -0.7f, -0.7f,
+//            1.0f,  0.5f,  0.0f,  1.0f,
+//            
+//            0.7f,  0.7f, -0.7f,
+//            1.0f,  0.5f,  0.0f,  1.0f,
+//            
+//            -0.7f, 0.7f, -0.7f,
+//            1.0f,  0.0f,  0.0f,  1.0f,
+//            
+//            -0.7f, -0.7f,  0.7f,
+//            1.0f,  0.0f,  0.0f,  1.0f,
+//            
+//            0.7f, -0.7f,  0.7f,
+//            0.0f,  0.0f,  1.0f,  1.0f,
+//            
+//            0.7f,  0.7f,  0.7f,
+//            1.0f,  0.0f,  1.0f,  1.0f,
+//            
+//            -0.7f,  0.7f,  0.7f,
+//            1.0f,  1.0f,  1.0f,  1.0f
+//	            
+//	            
+//		};
+	
 	private float[] vertices = 
 		{
-//            -0.5f, -0.5f, -0.5f,
-////            1.0f, 0.0f, 0.0f, 1.0f,
-// 
-//            0.5f, -0.5f, -0.5f,
-////            0.0f, 0.0f, 1.0f, 1.0f,
-// 
-//            0.5f, 0.5f, -0.5f,
-////            0.0f, 1.0f, 0.0f, 1.0f,
-//            
-//            -0.5f, 0.5f, -0.5f
-////            1.0f, 1.0f, 0.0f, 1.0f
-//
-//			
-//            -0.5f, -0.5f, 0.5f,
-////          1.0f, 0.0f, 0.0f, 1.0f,
-//
-//          0.5f, -0.5f, 0.5f,
-////          0.0f, 0.0f, 1.0f, 1.0f,
-//
-//          0.5f, 0.5f, 0.5f,
-////          0.0f, 1.0f, 0.0f, 1.0f,
-//          
-//          -0.5f, 0.5f, 0.5f
-////          1.0f, 1.0f, 0.0f, 1.0f
+		      	-0.7f, 0.7f, -0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
 
-            -0.7f, -0.7f, -0.7f,
-            0.0f,  1.0f,  0.0f,  1.0f,
-            
-            0.7f, -0.7f, -0.7f,
-            1.0f,  0.5f,  0.0f,  1.0f,
-            
-            0.7f,  0.7f, -0.7f,
-            1.0f,  0.5f,  0.0f,  1.0f,
-            
-            -0.7f, 0.7f, -0.7f,
-            1.0f,  0.0f,  0.0f,  1.0f,
-            
-            -0.7f, -0.7f,  0.7f,
-            1.0f,  0.0f,  0.0f,  1.0f,
-            
-            0.7f, -0.7f,  0.7f,
-            0.0f,  0.0f,  1.0f,  1.0f,
-            
-            0.7f,  0.7f,  0.7f,
-            1.0f,  0.0f,  1.0f,  1.0f,
-            
-            -0.7f,  0.7f,  0.7f,
-            1.0f,  1.0f,  1.0f,  1.0f
-	            
+		      	0.7f, 0.7f, -0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
+
+		      	-0.7f, -0.7f, -0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
+
+		      	0.7f, -0.7f, -0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
+
+		        -0.7f, 0.7f, 0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
+		        -0.7f, -0.7f, 0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
+		        0.7f, 0.7f, 0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
+		        0.7f, -0.7f, 0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
+
+		        -0.7f, 0.7f, 0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
+		        0.7f, 0.7f, 0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
+		        -0.7f, 0.7f, -0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
+		        0.7f, 0.7f, -0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
+
+		        -0.7f, -0.7f, 0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
+		        -0.7f, -0.7f, -0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
+		        0.7f, -0.7f, 0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
+		        0.7f, -0.7f, -0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
+
+		        0.7f, 0.7f, -0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
+		        0.7f, 0.7f, 0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
+		        0.7f, -0.7f, -0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
+		        0.7f, -0.7f, 0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
+
+		        -0.7f, 0.7f, -0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
+		        -0.7f, -0.7f, -0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
+		        -0.7f, 0.7f, 0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
+		        -0.7f, -0.7f, 0.7f,
+	            0.0f,  1.0f,  0.0f,  1.0f,
+
+//            -0.7f, -0.7f, -0.7f,
+//            0.0f,  1.0f,  0.0f,  1.0f,
+//            
+//            0.7f, -0.7f, -0.7f,
+//            1.0f,  0.5f,  0.0f,  1.0f,
+//            
+//            0.7f,  0.7f, -0.7f,
+//            1.0f,  0.5f,  0.0f,  1.0f,
+//            
+//            -0.7f, 0.7f, -0.7f,
+//            1.0f,  0.0f,  0.0f,  1.0f,
+//            
+//            -0.7f, -0.7f,  0.7f,
+//            1.0f,  0.0f,  0.0f,  1.0f,
+//            
+//            0.7f, -0.7f,  0.7f,
+//            0.0f,  0.0f,  1.0f,  1.0f,
+//            
+//            0.7f,  0.7f,  0.7f,
+//            1.0f,  0.0f,  1.0f,  1.0f,
+//            
+//            -0.7f,  0.7f,  0.7f,
+//            1.0f,  1.0f,  1.0f,  1.0f
+//	            
 	            
 		};
+	
 	
 //	private short[] drawOrder = { 0,1,3,1,2,3, 
 //			7,6,4, 6,5,4
 //			};
 	
-	private short[] drawOrder = { 
-            0, 4, 5, 0, 5, 1,
-            1, 5, 6, 1, 6, 2,
-            2, 6, 7, 2, 7, 3,   // something wrong
-            3, 7, 4, 3, 4, 0,
-            4, 7, 6, 4, 6, 5,
-            3, 0, 1, 3, 1, 2
+	private short[] drawOrder = {
+			    0,  1,  2,  1,  2,  3,
+			     4,  5,  6,  5,  6,  7,
+			     8,  9, 10,  9, 10, 11,
+			    12, 13, 14, 13, 14, 15,
+			    16, 17, 18, 17, 18, 19,
+			    20, 21, 22, 21, 22, 23 			
+//            0, 4, 5, 0, 5, 1,
+//            1, 5, 6, 1, 6, 2,
+//            2, 6, 7, 2, 7, 3,   // something wrong
+//            3, 7, 4, 3, 4, 0,
+//             4, 7, 5, 5, 7, 6,
+//            3, 0, 1, 3, 1, 2
             };
 	
 	// S, T (or X, Y)
@@ -122,49 +191,82 @@ public class MyCube {
 	// What's more is that the texture coordinates are the same for every face.
 	final float[] cubeTextureCoordinateData =
 	{
+			    0.0f, 0.0f,
+			    1.0f, 0.0f,
+			    0.0f, 1.0f,
+			    1.0f, 1.0f,
+
+			    1.0f, 0.0f,
+			    1.0f, 1.0f,
+			    0.0f, 0.0f,
+			    0.0f, 1.0f,
+
+			    0.0f, 0.0f,
+			    1.0f, 0.0f,
+			    0.0f, 1.0f,
+			    1.0f, 1.0f,
+
+			    0.0f, 1.0f,
+			    0.0f, 0.0f,
+			    1.0f, 1.0f,
+			    1.0f, 0.0f,
+
+			    0.0f, 0.0f,
+			    1.0f, 0.0f,
+			    0.0f, 1.0f,
+			    1.0f, 1.0f,
+
+			    1.0f, 0.0f,
+			    1.0f, 1.0f,
+			    0.0f, 0.0f,
+			    0.0f, 1.0f
 	        // Front face
-	        0.0f, 1.0f,
-	        0.0f, 0.0f,
-	        1.0f, 0.0f,
-	        0.0f, 1.0f,
-	        1.0f, 0.0f,
-	        1.0f, 1.0f,
 
-	        1.0f, 0.0f,
-	        0.0f, 0.0f,
-	        0.0f, 1.0f,
-	        1.0f, 0.0f,
-	        0.0f, 1.0f,
-	        1.0f, 1.0f,
+//				1.0f, 1.0f,
+//		        0.0f, 1.0f,
+//		        0.0f, 0.0f,
+//		        1.0f, 1.0f,
+//		        1.0f, 0.0f,
+//		        0.0f, 0.0f,
+		        
 
-	        1.0f, 0.0f,
-	        0.0f, 0.0f,
-	        0.0f, 1.0f,
-	        1.0f, 0.0f,
-	        1.0f, 1.0f,
-	        0.0f, 1.0f,
-	        
-	        0.0f, 1.0f,
-	        1.0f, 1.0f,
-	        1.0f, 0.0f,
-	        0.0f, 1.0f,
-	        1.0f, 0.0f,
-	        0.0f, 0.0f,
+//        	0.0f, 0.0f,
+//	        0.0f, 1.0f,
+//	        1.0f, 1.0f,
+//
+//	        	0.0f, 0.0f,
+//		        0.0f, 1.0f,
+//		        1.0f, 1.0f,
+//		        
+//		        0.0f, 0.0f,
+//		        0.0f, 1.0f,
+//		        1.0f, 0.0f,
+//		        0.0f, 1.0f,
+//		        1.0f, 1.0f,
+//		        1.0f, 0.0f,
+//		        
+//		        0.0f, 0.0f,
+//		        0.0f, 1.0f,
+//		        1.0f, 0.0f,
+//		        0.0f, 1.0f,
+//		        1.0f, 1.0f,
+//		        1.0f, 0.0f,
+//		        
+//			0.0f, 1.0f,
+//	        0.0f, 0.0f,
+//	        1.0f, 0.0f,
+//	        1.0f, 0.0f,
+//	        0.0f, 1.0f,
+//	       1.0f, 1.0f,
 
-	        0.0f, 0.0f,
-	        0.0f, 1.0f,
-	        1.0f, 1.0f,
-	        0.0f, 0.0f,
-	        1.0f, 1.0f,
-	        1.0f, 0.0f,
-
-	        1.0f, 1.0f,
-	        1.0f, 0.0f,
-	        0.0f, 0.0f,
-	        1.0f, 1.0f,
-	        0.0f, 0.0f,
-	        0.0f, 1.0f
-	};
+//		        
+//		        0.0f, 0.0f,
+//		        0.0f, 1.0f,
+//		        1.0f, 0.0f,
+//		        0.0f, 1.0f,
+//		        1.0f, 1.0f,
+//		        1.0f, 0.0f,
+};
 	 
 	
 	private int glProgram =0, mPositionHandle, mMVPMatrixHandle,mColorHandle, aTextureHandle, mTextureUniformHandle ;
@@ -261,7 +363,7 @@ public class MyCube {
 	public void draw() {
 	    // Add program to OpenGL ES environment
 		
-		GLES20.glDisable(GLES20.GL_CULL_FACE);
+//		GLES20.glDisable(GLES20.GL_CULL_FACE);
 	    GLES20.glUseProgram(glProgram);
 
 	    // Set the active texture unit to texture unit 0.
@@ -297,20 +399,23 @@ public class MyCube {
 //	    GLES20.glUniform4fv(mColorHandle, 1, color, 0);
 	    
         Matrix.setIdentityM(mModelMatrix, 0);
+        Matrix.scaleM(mModelMatrix, 0, .8f, 0.8f, 0.8f);
         
         long time = SystemClock.uptimeMillis() % 10000L;
         float angleInDegrees = (360.0f / 10000.0f) * ((int) time);
+        
+//        float angleInDegrees = 90f;
 
         
 //        Matrix.scaleM(m, mOffset, x, y, z)
         
-//        scalevalue+=scaleInc;
-//        if (scalevalue >= 1.0) {
-//        	scaleInc = -0.01f;
-//        } else if (scalevalue <= 0.1) {
-//        	scaleInc = 0.01f;
-//        }        
-//        Matrix.scaleM(mModelMatrix, 0, scalevalue, scalevalue, scalevalue);
+        scalevalue+=scaleInc;
+        if (scalevalue >= 1.0) {
+        	scaleInc = -0.01f;
+        } else if (scalevalue <= 0.1) {
+        	scaleInc = 0.01f;
+        }        
+        Matrix.scaleM(mModelMatrix, 0, scalevalue, scalevalue, scalevalue);
 //
         Matrix.rotateM(mModelMatrix, 0, -angleInDegrees, 0.0f, 1.0f, 0.0f);
         Matrix.rotateM(mModelMatrix, 0, -angleInDegrees, 1.0f, 0.0f, 0.0f);
@@ -359,6 +464,12 @@ public class MyCube {
 	        GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MIN_FILTER, GLES20.GL_NEAREST);
 	        GLES20.glTexParameteri(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MAG_FILTER, GLES20.GL_NEAREST);
 	 
+//	        GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_S, GLES20.GL_CLAMP_TO_EDGE);
+//	        GLES20. glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_WRAP_T, GLES20.GL_CLAMP_TO_EDGE);
+//	        
+//	        GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MIN_FILTER, GLES20.GL_LINEAR);
+//	        GLES20.glTexParameterf(GLES20.GL_TEXTURE_2D, GLES20.GL_TEXTURE_MAG_FILTER, GLES20.GL_NEAREST);
+	        
 	        // Load the bitmap into the bound texture.
 	        GLUtils.texImage2D(GLES20.GL_TEXTURE_2D, 0, bitmap, 0);
 	 
